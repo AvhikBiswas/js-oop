@@ -585,7 +585,15 @@ console.log(new Report(new PlainFormatter()).render(["a", "b"]));`,
     },
     extraExample: {
       title: "Swap the collaborator",
-      code: `const jsonFormatter = {
+      code: `class Report {
+  constructor(formatter) {
+    this.formatter = formatter;
+  }
+  render(data) {
+    return this.formatter.format(data);
+  }
+}
+const jsonFormatter = {
   format(data) { return JSON.stringify(data); },
 };
 const report = new Report(jsonFormatter);
