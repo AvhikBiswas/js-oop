@@ -335,12 +335,15 @@ console.log(new Service(new Logger()).run());`,
     return "started";
   }
 }
-const canRecord = (object) => ({
-  ...object,
-  record() {
-    return "recorded";
+const canRecord = (object) => Object.assign(
+  Object.create(Object.getPrototypeOf(object)),
+  object,
+  {
+    record() {
+      return "recorded";
+    },
   },
-});
+);
 const camera = canRecord(new Device());
 console.log(camera.start(), camera.record());`,
       goal: "Add a canStream capability and apply it so camera can start, record, and stream.",
