@@ -376,7 +376,7 @@ console.log(new ReportService(memoryRepository).save("Q1"));`,
       title: "Swap infrastructure at the boundary",
       code: `function buildCounter(clock) {
   return {
-    year() { return clock.now().getFullYear(); }
+    year() { return clock.now().getUTCFullYear(); }
   };
 }
 const fixedClock = { now: () => new Date("2024-01-01T00:00:00Z") };
