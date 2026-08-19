@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #070b16;
+  --bg-elev: #0d1426;
+  --bg-card: #121a30;
+  --line: rgba(148, 163, 184, 0.16);
+  --text: #e8eefc;
+  --muted: #93a0c0;
+  --accent: #f7df1e;
+  --teal: #2dd4bf;
+  --pink: #fb7185;
+  --blue: #60a5fa;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-elev: var(--bg-elev);
+  --color-bg-card: var(--bg-card);
+  --color-line: var(--line);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-teal: var(--teal);
+  --font-sans: var(--font-outfit);
+  --font-mono: var(--font-jetbrains);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--text);
+}
+
+body {
+  font-family: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  background-image:
+    radial-gradient(1200px 600px at 10% -10%, rgba(247, 223, 30, 0.08), transparent 50%),
+    radial-gradient(900px 500px at 100% 0%, rgba(45, 212, 191, 0.08), transparent 45%),
+    linear-gradient(180deg, #070b16 0%, #0a1020 100%);
+}
+
+::selection {
+  background: rgba(247, 223, 30, 0.28);
+  color: #fff;
+}
+
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148, 163, 184, 0.35) transparent;
+}
+
+.prose-js p {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.code-grid {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.sticky-note {
+  background: linear-gradient(180deg, #fff7c2 0%, #f5e38a 100%);
+  color: #3a2d04;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+  transform: rotate(-0.6deg);
+}
+
+.sticky-note:nth-child(2n) {
+  transform: rotate(0.8deg);
+  background: linear-gradient(180deg, #d1fae5 0%, #99f6e4 100%);
+  color: #064e3b;
+}
+
+.sticky-note:nth-child(3n) {
+  transform: rotate(-1.1deg);
+  background: linear-gradient(180deg, #e0e7ff 0%, #c7d2fe 100%);
+  color: #1e1b4b;
+}
