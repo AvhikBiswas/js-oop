@@ -40,7 +40,10 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const pct = Math.round((done.length / total) * 100);
 
   const navLink = (href: string, label: string) => {
-    const active = pathname === href || pathname.startsWith(`${href}/`);
+    const active =
+      href === "/"
+        ? pathname === "/"
+        : pathname === href || pathname.startsWith(`${href}/`);
     return (
       <Link
         href={href}
